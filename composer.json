@@ -1,0 +1,29 @@
+{
+    "name": "mx13/imageable",
+    "description": "Library for image upload.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mohamed Elshazly (Manson)",
+            "email": "manson@mx13.io"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "intervention/image": "^2.4",
+        "illuminate/support": "^5.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "MX13\\Imageable\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MX13\\Imageable\\ImageableServiceProvider"
+            ]
+        }
+    }
+}
