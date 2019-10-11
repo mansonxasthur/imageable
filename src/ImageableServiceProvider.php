@@ -12,7 +12,17 @@ use Illuminate\Support\ServiceProvider;
 
 class ImageableServiceProvider extends ServiceProvider
 {
-    const DS = DIRECTORY_SEPARATOR;
+    /**
+     * Register bindings in the container.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $this->mergeConfigFrom(
+            __DIR__ . '/config/imageable.php', 'imageable'
+        );
+    }
 
     /**
      * Bootstrap any application services.
@@ -22,7 +32,7 @@ class ImageableServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__. self::DS . 'config' . self::DS . 'imageable.php' => config_path('imageable.php'),
+            __DIR__. '/config/imageable.php' => config_path('imageable.php'),
         ], 'config');
     }
 }
